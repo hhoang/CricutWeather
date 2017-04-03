@@ -4,8 +4,12 @@
   <color name="colorPrimaryDark">#71b488</color>
   <color name="colorAccent">#82D59F</color>
 
+  <!-- background colors -->
   <color name="gradient_bg_start">#2d3646</color>
   <color name="gradient_bg_end">#415863</color>
 
+  <!-- text colors -->
   <color name="white">#ffffff</color>
+  <color name="whiteTransparent">#70ffffff</color>
+
 </resources>
