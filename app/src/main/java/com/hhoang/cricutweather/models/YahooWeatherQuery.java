@@ -4,6 +4,7 @@ package com.hhoang.cricutweather.models;
 import android.os.Parcel;
 import android.os.Parcelable;
 import com.google.gson.annotations.SerializedName;
+import java.util.List;
 
 public class YahooWeatherQuery implements Parcelable {
 
@@ -20,6 +21,9 @@ public class YahooWeatherQuery implements Parcelable {
         return query.results.channel.item.forecast.get(0);
     }
 
+    public List<Forecast> getForecasts(){
+        return query.results.channel.item.forecast;
+    }
 
     protected YahooWeatherQuery(Parcel in) {
         query = in.readParcelable(Query.class.getClassLoader());
