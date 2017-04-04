@@ -1,6 +1,6 @@
 package com.hhoang.cricutweather.dagger;
 
-import com.hhoang.cricutweather.Home;
+import com.hhoang.cricutweather.ui.activities.Home;
 import dagger.Component;
 import javax.inject.Singleton;
 

@@ -1,4 +1,4 @@
-package com.hhoang.cricutweather.viewholders;
+package com.hhoang.cricutweather.ui.viewholders;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,8 +17,9 @@ public class ForecastViewHolder extends RecyclerView.ViewHolder {
   @BindView(R.id.high) public TextView high;
   @BindView(R.id.low) public TextView low;
 
-  public ForecastViewHolder(View itemView) {
+  public ForecastViewHolder(final View itemView) {
     super(itemView);
     ButterKnife.bind(this, itemView);
+
   }
 }

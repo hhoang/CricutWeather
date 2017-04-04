@@ -1,16 +1,11 @@
 package com.hhoang.cricutweather.adapters;
 
-import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import com.hhoang.cricutweather.R;
-import com.hhoang.cricutweather.fragments.CurrentFragment;
-import com.hhoang.cricutweather.fragments.DetailFragment;
-import com.hhoang.cricutweather.fragments.ForecastFragment;
+import com.hhoang.cricutweather.ui.fragments.CurrentFragment;
+import com.hhoang.cricutweather.ui.fragments.DetailFragment;
+import com.hhoang.cricutweather.ui.fragments.ForecastFragment;
 import com.hhoang.cricutweather.models.YahooWeatherQuery;
 
 /**

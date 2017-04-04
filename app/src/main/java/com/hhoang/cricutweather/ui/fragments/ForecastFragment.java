@@ -1,4 +1,4 @@
-package com.hhoang.cricutweather.fragments;
+package com.hhoang.cricutweather.ui.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -35,7 +35,7 @@ public class ForecastFragment extends Fragment {
     super.onCreate(savedInstanceState);
     if (getArguments() != null) {
       weatherData = getArguments().getParcelable("data");
-      adapter = new ForecastRecyclerAdapter(getContext(), weatherData.getForecasts());
+      adapter = new ForecastRecyclerAdapter(getActivity(), weatherData.getForecasts());
     }
   }
 

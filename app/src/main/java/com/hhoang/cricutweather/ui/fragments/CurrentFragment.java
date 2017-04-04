@@ -1,12 +1,10 @@
-package com.hhoang.cricutweather.fragments;
+package com.hhoang.cricutweather.ui.fragments;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebView;
-import android.webkit.WebViewClient;
 import android.widget.ImageView;
 import android.widget.TextView;
 import butterknife.BindView;
@@ -14,7 +12,6 @@ import butterknife.ButterKnife;
 import com.hhoang.cricutweather.R;
 import com.hhoang.cricutweather.models.YahooWeatherQuery;
 import com.squareup.picasso.Picasso;
-import java.text.Format;
 
 /**
  * Created by hoahoang on 4/3/17.
