@@ -1,10 +1,10 @@
 package com.hhoang.cricutweather;
 
 import android.app.Application;
-import com.hhoang.cricutweather.Dagger.AppModule;
-import com.hhoang.cricutweather.Dagger.DaggerWeatherComponent;
-import com.hhoang.cricutweather.Dagger.WeatherComponent;
-import com.hhoang.cricutweather.Dagger.WeatherModule;
+import com.hhoang.cricutweather.dagger.AppModule;
+import com.hhoang.cricutweather.dagger.DaggerWeatherComponent;
+import com.hhoang.cricutweather.dagger.WeatherComponent;
+import com.hhoang.cricutweather.dagger.WeatherModule;
 
 /**
  * Created by hoahoang on 4/3/17.
@@ -17,7 +17,6 @@ public class App extends Application {
   @Override
   public void onCreate() {
     super.onCreate();
-
 
     weatherComponent = DaggerWeatherComponent.builder()
         .appModule(new AppModule(this))

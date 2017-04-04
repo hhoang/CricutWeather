@@ -8,6 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import com.hhoang.cricutweather.R;
+import com.hhoang.cricutweather.fragments.CurrentFragment;
+import com.hhoang.cricutweather.fragments.DetailFragment;
+import com.hhoang.cricutweather.fragments.ForecastFragment;
+import com.hhoang.cricutweather.models.YahooWeatherQuery;
 
 /**
  * Created by hoahoang on 4/3/17.
@@ -15,7 +19,9 @@ import com.hhoang.cricutweather.R;
 
 public class WeatherPagerAdapter extends FragmentPagerAdapter {
 
-  public WeatherPagerAdapter(FragmentManager fm) {
+  private YahooWeatherQuery weatherData;
+
+  public WeatherPagerAdapter(FragmentManager fm, YahooWeatherQuery weatherData) {
     super(fm);
   }
 
@@ -23,13 +29,13 @@ public class WeatherPagerAdapter extends FragmentPagerAdapter {
 
     switch (position) {
       case 0:
-        return PlaceholderFragment.newInstance();
+        return CurrentFragment.newInstance(weatherData);
       case 1:
-        return PlaceholderFragment.newInstance();
+        return ForecastFragment.newInstance(weatherData);
       case 2:
-        return PlaceholderFragment.newInstance();
+        return DetailFragment.newInstance(weatherData);
       default:
-        return PlaceholderFragment.newInstance();
+        return null;
     }
   }
 
@@ -48,22 +54,5 @@ public class WeatherPagerAdapter extends FragmentPagerAdapter {
         return "Details";
     }
     return null;
-  }
-
-  public static class PlaceholderFragment extends Fragment {
-
-    public PlaceholderFragment() {}
-
-    public static PlaceholderFragment newInstance() {
-      PlaceholderFragment fragment = new PlaceholderFragment();
-      Bundle args = new Bundle();
-      //args.putInt(SOME_DATA, data);
-      fragment.setArguments(args);
-      return fragment;
-    }
-
-    @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-      return inflater.inflate(R.layout.fragment_detail, container, false);
-    }
   }
 }

@@ -35,7 +35,7 @@ public class Home extends AppCompatActivity {
     ((App) getApplication()).getWeatherComponent().inject(this);
     ButterKnife.bind(this);
 
-    initPager();
+
     fetchWeather();
   }
 
@@ -52,6 +52,7 @@ public class Home extends AppCompatActivity {
 
             if(yahooWeatherQuery != null){
               Log.d("hoa", "Response count : " + yahooWeatherQuery.query.count);
+              initPager(yahooWeatherQuery);
             }
           }
 
@@ -63,8 +64,8 @@ public class Home extends AppCompatActivity {
 
   }
 
-  private void initPager() {
-    adapter = new WeatherPagerAdapter(getSupportFragmentManager());
+  private void initPager(YahooWeatherQuery result) {
+    adapter = new WeatherPagerAdapter(getSupportFragmentManager(), result);
     mViewPager.setAdapter(adapter);
     mViewPager.setOffscreenPageLimit(3);
     mViewPager.setCurrentItem(1);

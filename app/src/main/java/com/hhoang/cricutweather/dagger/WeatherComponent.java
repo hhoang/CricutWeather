@@ -1,4 +1,4 @@
-package com.hhoang.cricutweather.Dagger;
+package com.hhoang.cricutweather.dagger;
 
 import com.hhoang.cricutweather.Home;
 import dagger.Component;

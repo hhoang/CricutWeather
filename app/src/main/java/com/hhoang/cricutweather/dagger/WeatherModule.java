@@ -1,4 +1,4 @@
-package com.hhoang.cricutweather.Dagger;
+package com.hhoang.cricutweather.dagger;
 
 import android.app.Application;
 import com.google.gson.FieldNamingPolicy;
