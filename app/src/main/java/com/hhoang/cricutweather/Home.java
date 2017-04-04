@@ -10,29 +10,36 @@ import butterknife.ButterKnife;
 import com.hhoang.cricutweather.adapters.WeatherPagerAdapter;
 import com.hhoang.cricutweather.models.YahooWeatherQuery;
 import com.hhoang.cricutweather.services.YahooWeatherService;
+import javax.inject.Inject;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+import retrofit2.Retrofit;
 
 public class Home extends AppCompatActivity {
 
-  private WeatherPagerAdapter adapter;
+
+  @Inject Retrofit retrofit;
 
   @BindView(R.id.detailsPager) ViewPager mViewPager;
+
+  private WeatherPagerAdapter adapter;
 
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
-
+    ((App) getApplication()).getWeatherComponent().inject(this);
+    ButterKnife.setDebug(true);
     ButterKnife.bind(this);
+
     initPager();
 
     fetchWeather();
   }
 
   private void fetchWeather() {
-    YahooWeatherService service = YahooWeatherService.api.create(YahooWeatherService.class);
-    Call<YahooWeatherQuery> call = service.getWeather();
+    //YahooWeatherService service = YahooWeatherService.api.create(YahooWeatherService.class);
+    Call<YahooWeatherQuery> call = retrofit.create(YahooWeatherService.class).getWeather();
     call.enqueue(new Callback<YahooWeatherQuery>() {
       @Override
       public void onResponse(Call<YahooWeatherQuery> call, Response<YahooWeatherQuery> response) {
