@@ -4,7 +4,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import com.hhoang.cricutweather.ui.fragments.CurrentFragment;
-import com.hhoang.cricutweather.ui.fragments.DetailFragment;
 import com.hhoang.cricutweather.ui.fragments.ForecastFragment;
 import com.hhoang.cricutweather.models.YahooWeatherQuery;
 
@@ -28,8 +27,6 @@ public class WeatherPagerAdapter extends FragmentPagerAdapter {
         return CurrentFragment.newInstance(weatherData);
       case 1:
         return ForecastFragment.newInstance(weatherData);
-      case 2:
-        return DetailFragment.newInstance(weatherData);
       default:
         return null;
     }
@@ -37,7 +34,7 @@ public class WeatherPagerAdapter extends FragmentPagerAdapter {
 
   @Override public int getCount() {
     // Show 3 total pages.
-    return 3;
+    return 2;
   }
 
   @Override public CharSequence getPageTitle(int position) {
@@ -46,8 +43,6 @@ public class WeatherPagerAdapter extends FragmentPagerAdapter {
         return "Current";
       case 1:
         return "Forecast";
-      case 2:
-        return "Details";
     }
     return null;
   }

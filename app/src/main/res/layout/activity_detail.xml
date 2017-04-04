@@ -26,8 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/temp_low"
-        android:layout_alignTop="@+id/temp_low"
-        android:text="31"/>
+        android:layout_alignTop="@+id/temp_low"/>
 
     <ImageView
         android:id="@+id/temp_high"
@@ -42,8 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@+id/temp_high"
-        android:layout_alignTop="@+id/temp_high"
-        android:text="80"/>
+        android:layout_alignTop="@+id/temp_high"/>
 
   <ImageView
       android:id="@+id/image"

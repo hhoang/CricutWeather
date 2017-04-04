@@ -72,7 +72,6 @@ public class Home extends AppCompatActivity {
     adapter = new WeatherPagerAdapter(getSupportFragmentManager(), result);
     mViewPager.setAdapter(adapter);
     mViewPager.setOffscreenPageLimit(3);
-    mViewPager.setCurrentItem(1);
     TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
     tabLayout.setupWithViewPager(mViewPager);
   }
