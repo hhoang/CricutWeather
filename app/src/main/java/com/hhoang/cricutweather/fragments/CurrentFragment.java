@@ -54,7 +54,7 @@ public class CurrentFragment extends Fragment {
     tempLow.setText(weatherData.getCurrentForecast().low);
     tempHigh.setText(weatherData.getCurrentForecast().high);
     temp.setText(String.format(getString(R.string.temperature), weatherData.getCondition().temp));
-    
+
     Picasso.with(getContext()).load(String.format(getString(R.string.image_url), weatherData.getCondition().code)).into(image);
 
     return view;
