@@ -43,9 +43,9 @@ public class ForecastRecyclerAdapter extends RecyclerView.Adapter<ForecastViewHo
     vh.low.setText(forecast.low);
     vh.itemView.setOnClickListener(new View.OnClickListener() {
       @Override public void onClick(View v) {
-        vh.day.setTransitionName("day_transition");
+        vh.day.setTransitionName(context.getString(R.string.transition_name_day));
         ActivityOptionsCompat options = ActivityOptionsCompat.
-            makeSceneTransitionAnimation(context, vh.day, "day_transition");
+            makeSceneTransitionAnimation(context, vh.day, context.getString(R.string.transition_name_day));
         Intent intent = DetailActivity.getDetailIntent(context, forecast.high, forecast.low, forecast.day, forecast.text, String.format(vh.itemView.getContext().getString(R.string.image_url), forecast.code));
         context.startActivity(intent, options.toBundle());
       }

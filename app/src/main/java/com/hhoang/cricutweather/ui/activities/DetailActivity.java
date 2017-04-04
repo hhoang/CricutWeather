@@ -40,12 +40,8 @@ public class DetailActivity extends AppCompatActivity {
     setContentView(R.layout.activity_detail);
     ButterKnife.bind(this);
 
-    TextSizeTransition handler = new TextSizeTransition(this, null);
+    initTransitions();
 
-    getWindow().setEnterTransition(makeEnterTransition());
-    getWindow().setSharedElementEnterTransition(makeSharedElementEnterTransition(this));
-
-    setEnterSharedElementCallback(new EnterSharedElementCallback(this));
     String high, low, day, description, url;
     if(getIntent() != null && getIntent().getExtras() != null){
       high = getIntent().getExtras().getString("high");
@@ -61,6 +57,12 @@ public class DetailActivity extends AppCompatActivity {
       Picasso.with(DetailActivity.this).load(url).into(imageView);
     }
   }
+  public void initTransitions(){
+    getWindow().setEnterTransition(makeEnterTransition());
+    getWindow().setSharedElementEnterTransition(makeSharedElementEnterTransition(this));
+    setEnterSharedElementCallback(new EnterSharedElementCallback(this));
+
+  }
   public static Transition makeEnterTransition() {
     Transition fade = new Fade();
     fade.excludeTarget(android.R.id.navigationBarBackground, true);
@@ -74,12 +76,12 @@ public class DetailActivity extends AppCompatActivity {
 
     Transition changeBounds = new ChangeBounds();
     changeBounds.addTarget(R.id.day);
-    changeBounds.addTarget("day_transition");
+    changeBounds.addTarget(context.getString(R.string.transition_name_day));
     set.addTransition(changeBounds);
 
     Transition textSize = new TextSizeTransition();
     textSize.addTarget(R.id.day);
-    textSize.addTarget("day_transition");
+    textSize.addTarget(context.getString(R.string.transition_name_day));
     set.addTransition(textSize);
 
     return set;

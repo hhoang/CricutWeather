@@ -3,7 +3,6 @@
   <string formatted="false" name="image_url">http://l.yimg.com/a/i/us/we/52/%s.gif</string>
   <string formatted="false" name="temperature">%s°</string>
 
-  <!-- TODO: Remove or change this placeholder text -->
-  <string name="hello_blank_fragment">Hello blank fragment</string>
   <string name="image_description">weather image</string>
+  <string name="transition_name_day">day_transition</string>
 </resources>
