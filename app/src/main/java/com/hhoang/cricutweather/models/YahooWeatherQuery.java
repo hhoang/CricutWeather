@@ -10,6 +10,17 @@ public class YahooWeatherQuery implements Parcelable {
     @SerializedName("query")
     public Query query;
 
+    // Helpers
+    public Condition getCondition(){
+        return query.results.channel.item.condition;
+    }
+
+
+    public Forecast getCurrentForecast(){
+        return query.results.channel.item.forecast.get(0);
+    }
+
+
     protected YahooWeatherQuery(Parcel in) {
         query = in.readParcelable(Query.class.getClassLoader());
     }

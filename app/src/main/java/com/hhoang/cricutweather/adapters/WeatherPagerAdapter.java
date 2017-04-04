@@ -23,6 +23,7 @@ public class WeatherPagerAdapter extends FragmentPagerAdapter {
 
   public WeatherPagerAdapter(FragmentManager fm, YahooWeatherQuery weatherData) {
     super(fm);
+    this.weatherData = weatherData;
   }
 
   @Override public Fragment getItem(int position) {

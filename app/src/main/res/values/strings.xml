@@ -1,6 +1,9 @@
 <resources>
   <string name="app_name">CricutWeather</string>
+  <string name="image_url" formatted="false">http://l.yimg.com/a/i/us/we/52/%s.gif</string>
+  <string name="temperature" formatted="false">%s°</string>
 
   <!-- TODO: Remove or change this placeholder text -->
   <string name="hello_blank_fragment">Hello blank fragment</string>
+  <string name="image_description">weather image</string>
 </resources>

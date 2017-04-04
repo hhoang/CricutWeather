@@ -16,6 +16,7 @@ import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 import javax.inject.Inject;
+import org.reactivestreams.Subscription;
 import retrofit2.Retrofit;
 
 public class Home extends AppCompatActivity {
@@ -41,24 +42,26 @@ public class Home extends AppCompatActivity {
 
   private void fetchWeather() {
 
-    retrofit.create(YahooWeatherService.class).getWeather().subscribeOn(
-        Schedulers.io())
+    retrofit.create(YahooWeatherService.class)
+        .getWeather()
+        .subscribeOn(Schedulers.io())
         .observeOn(AndroidSchedulers.mainThread())
         .subscribe(new SingleObserver<YahooWeatherQuery>() {
-          @Override public void onSubscribe(Disposable d) {}
+          @Override public void onSubscribe(Disposable d) {
+          }
 
           @Override public void onSuccess(YahooWeatherQuery yahooWeatherQuery) {
             Log.d("hoa", "onSuccess");
 
-            if(yahooWeatherQuery != null){
-              Log.d("hoa", "Response count : " + yahooWeatherQuery.query.count);
+            if (yahooWeatherQuery != null) {
               initPager(yahooWeatherQuery);
             }
           }
 
           @Override public void onError(Throwable e) {
             Log.d("hoa", "onError");
-            Toast.makeText(Home.this, "There was an error fetching weather data. Please try again.", Toast.LENGTH_SHORT).show();
+            Toast.makeText(Home.this, "There was an error fetching weather data. Please try again.",
+                Toast.LENGTH_SHORT).show();
           }
         });
 

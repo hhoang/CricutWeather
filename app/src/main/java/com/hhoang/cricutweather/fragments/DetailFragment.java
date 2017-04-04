@@ -15,9 +15,7 @@ import com.hhoang.cricutweather.models.YahooWeatherQuery;
 public class DetailFragment extends Fragment {
   private YahooWeatherQuery weatherData;
 
-  public DetailFragment() {
-    // Required empty public constructor
-  }
+  public DetailFragment() {}
 
   public static DetailFragment newInstance(YahooWeatherQuery weatherData) {
     DetailFragment fragment = new DetailFragment();
@@ -35,7 +33,6 @@ public class DetailFragment extends Fragment {
   }
 
   @Override public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-    // Inflate the layout for this fragment
     return inflater.inflate(R.layout.fragment_current, container, false);
   }
 }
