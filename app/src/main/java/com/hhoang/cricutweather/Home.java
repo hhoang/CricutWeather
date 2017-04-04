@@ -28,17 +28,16 @@ public class Home extends AppCompatActivity {
   @Override protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_home);
+
+    // inject dependencies
     ((App) getApplication()).getWeatherComponent().inject(this);
-    ButterKnife.setDebug(true);
     ButterKnife.bind(this);
 
     initPager();
-
     fetchWeather();
   }
 
   private void fetchWeather() {
-    //YahooWeatherService service = YahooWeatherService.api.create(YahooWeatherService.class);
     Call<YahooWeatherQuery> call = retrofit.create(YahooWeatherService.class).getWeather();
     call.enqueue(new Callback<YahooWeatherQuery>() {
       @Override
